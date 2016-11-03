@@ -101,11 +101,11 @@ module.exports.postbackData = function(recipientId, postback) {
       buttons: [{
         type: "postback",
         title: "Book",
-        payload: "Beauty Service Book Makeup " + service + " Book",
+        payload: service + " Book",
       }, {
         type: "postback",
         title: "Details",
-        payload: "Beauty Service Book Makeup " + service + " Details"
+        payload: service + " Details"
       }],
     };
 
@@ -114,11 +114,11 @@ module.exports.postbackData = function(recipientId, postback) {
       buttons: [{
         type: "postback",
         title: "Book",
-        payload: "Beauty Service Book Makeup " + service + " Book",
+        payload: service + " Book",
       }, {
         type: "postback",
         title: "Details",
-        payload: "Beauty Service Book Makeup " + service + " Details"
+        payload: service + " Details"
       }],
     };
 
@@ -127,11 +127,11 @@ module.exports.postbackData = function(recipientId, postback) {
       buttons: [{
         type: "postback",
         title: "Book",
-        payload: "Beauty Service Book Makeup " + service + " Book",
+        payload: service + " Book",
       }, {
         type: "postback",
         title: "Details",
-        payload: "Beauty Service Book Makeup " + service + " Details"
+        payload: service + " Details"
       }],
     };
 
@@ -219,12 +219,12 @@ module.exports.postbackData = function(recipientId, postback) {
 
       break;
 
-    case "Beauty Service Book Makeup Class Details":
+    case "Makeup Class Details":
       dataArray.push(detailsMakeupClass);
 
       break;
 
-    case "Beauty Service Book Makeup Class Book":
+    case "Makeup Class Book":
       dataArray.push(bookLocations);
 
       break;
