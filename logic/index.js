@@ -67,7 +67,7 @@ module.exports.postbackData = function(recipientId, postback) {
         {
           "content_type":"text",
           "title":"Makeup Service",
-          "payload":"Makeup Service Book Makeup Service"
+          "payload":"Beauty Service Book Makeup Service"
         },
         {
           "content_type":"text",
