@@ -154,8 +154,42 @@ module.exports.postbackData = function(recipientId, postback) {
   }
 
   /**************            **************/
+  var detailsMakeupClass = {
+    recipient: {
+      id: recipientId
+    },
+    message: {
+      text: "SHISEIDO黃金比例彩粧造型師會以一對一的教學模式，讓你深入淺出了解黃金比例彩粧及教導你量度整個面部的個人黃金比例; 並因應量度結果指導你化粧技巧，替自己締造粧容完美彩粧。完成服務後，可於服務當日換購HK$900化粧產品",
+      metadata: "DEVELOPER_DEFINED_METADATA"
+    }
+  };
 
   /**************            **************/
+  var bookLocations = {
+    recipient: {
+      id: recipientId
+    },
+    message: {
+      text: "We offer Makeup and Facial Service. What do you want to book?",
+      quick_replies: [
+        {
+          "content_type":"text",
+          "title":"Makeup Service",
+          "payload":"Beauty Service Book Makeup Service"
+        },
+        {
+          "content_type":"text",
+          "title":"Makeup Class",
+          "payload":"Beauty Service Book Makeup Class"
+        },
+        {
+          "content_type":"text",
+          "title":"Facial Service",
+          "payload":"Beauty Service Book Facial Service"
+        }
+      ]
+    }
+  };
 
 
   switch(postback) {
@@ -182,6 +216,16 @@ module.exports.postbackData = function(recipientId, postback) {
 
     case 'Beauty Service Book Facial Service':
       dataArray = fBeautyServiceBookGen('Facial Service');
+
+      break;
+
+    case "Beauty Service Book Makeup Class Details":
+      dataArray.push(detailsMakeupClass);
+
+      break;
+
+    case "Beauty Service Book Makeup Class Book":
+      dataArray.push(bookLocations);
 
       break;
 
