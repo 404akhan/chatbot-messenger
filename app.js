@@ -248,6 +248,11 @@ function receivedMessage(event) {
 
     sendTextMessage(senderID, "Quick reply tapped");
     return;
+  } else {
+
+    sendTextMessage(senderID, "We will get in touch with you soon. Thank you.");
+
+    return;
   }
 
   if (messageText) {
