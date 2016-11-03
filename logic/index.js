@@ -154,7 +154,7 @@ module.exports.postbackData = function(recipientId, postback) {
   }
 
   /**************            **************/
-  var detailsMakeupClass = {
+  var detailsMakeupService = {
     recipient: {
       id: recipientId
     },
@@ -292,12 +292,12 @@ module.exports.postbackData = function(recipientId, postback) {
     //
     //   break;
 
-    case "Makeup Class Details":
-      dataArray.push(detailsMakeupClass);
+    case "Makeup Service Details":
+      dataArray.push(detailsMakeupService);
 
       break;
 
-    case "Makeup Class Book":
+    case "Makeup Service Book":
       dataArray.push(bookLocations);
 
       break;
