@@ -246,11 +246,11 @@ function receivedMessage(event) {
     console.log("Quick reply for message %s with payload %s",
       messageId, quickReplyPayload);
 
-    var dataArray = logic.messageDataForPostback(senderID, quickReplyPayload);
+    var dataArray = logic.postbackData(senderID, quickReplyPayload);
 
     for(var i = 0; i < dataArray.length; i++)
       callSendAPI(dataArray[i]);
-    
+
     return;
   } else {
 
