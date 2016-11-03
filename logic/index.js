@@ -5,7 +5,7 @@ module.exports.postbackData = function(recipientId, postback) {
       id: recipientId
     },
     message: {
-      text: messageText,
+      text: "get started saadssadsad",
       metadata: "DEVELOPER_DEFINED_METADATA"
     }
   };
