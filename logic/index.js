@@ -1,5 +1,8 @@
 module.exports.postbackData = function(recipientId, postback) {
 
+  var dataArray = [];
+
+  /**************            **************/
   var defaultMessage = {
     recipient: {
       id: recipientId
@@ -65,6 +68,6 @@ module.exports.postbackData = function(recipientId, postback) {
       dataArray.push(defaultMessage);
   }
 
-  return messageData;
+  return dataArray;
 
 };

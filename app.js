@@ -371,9 +371,10 @@ function receivedPostback(event) {
   // let them know it was successful
   // sendTextMessage(senderID, "Postback called");
 
-  var messageData = logic.postbackData(senderID, payload);
+  var dataArray = logic.postbackData(senderID, payload);
 
-  callSendAPI(messageData);
+  for(var i = 0; i < dataArray.length; i++)
+    callSendAPI(dataArray[i]);
 }
 
 /*
