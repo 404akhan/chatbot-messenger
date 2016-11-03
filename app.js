@@ -16,7 +16,8 @@ const
   crypto = require('crypto'),
   express = require('express'),
   https = require('https'),  
-  request = require('request');
+  request = require('request'),
+  logic = require('./logic');
 
 var app = express();
 app.set('port', process.env.PORT || 5000);
@@ -363,7 +364,11 @@ function receivedPostback(event) {
 
   // When a postback is called, we'll send a message back to the sender to 
   // let them know it was successful
-  sendTextMessage(senderID, "Postback called");
+  // sendTextMessage(senderID, "Postback called");
+
+  var messageData = logic.postbackData(senderID, payload);
+
+  callSendAPI(messageData);
 }
 
 /*
