@@ -1,6 +1,6 @@
 {
-    "appSecret": "",
-    "pageAccessToken": "",
-    "validationToken": "",
-    "serverURL": ""
+    "appSecret": "ebc46c2e6cfae432229e5fce0282a9bf",
+    "pageAccessToken": "EAAYKLzlwJ0EBAGDZCgh2nJI7w9XLpa4Q6d2fWCNW7caxZCt55wgPCEQVqDoTLf4AY6vyK3YRbc6t368j560nj5g6GbnwOct8YsMXbrWoOV0FZChk94s54SoI2gBepkj2TaQfMqSJh6hyBTaXom3Kyq7iYm7CbqrX48fNTPGrgZDZD",
+    "validationToken": "my_voice_my_sound",
+    "serverURL": "https://beauty-service.herokuapp.com/"
 }
