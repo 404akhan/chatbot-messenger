@@ -209,7 +209,7 @@ module.exports.postbackData = function(recipientId, postback) {
   };
 
   /**************            **************/
-  var detailsMakeupClass = {
+  var dateAsk = {
     recipient: {
       id: recipientId
     },
@@ -273,7 +273,7 @@ module.exports.postbackData = function(recipientId, postback) {
       break;
 
     case "Festival Walk Store":
-      dataArray.push(bookLocations);
+      dataArray.push(dateAsk);
 
       break;
 
