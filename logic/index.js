@@ -84,8 +84,6 @@ module.exports.postbackData = function(recipientId, postback) {
   };
 
   /**************            **************/
-  var service = "";
-
   function fBeautyServiceBookGen(service) {
 
     var firstMessage = {
