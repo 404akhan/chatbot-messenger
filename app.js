@@ -252,6 +252,13 @@ function receivedMessage(event) {
       callSendAPI(dataArray[i]);
 
     return;
+  } else if(messageText.length == 'dd-mm-yyyy'.length && messageText[2] == messageText[5] && messageText[5] == '-') {
+    var dataArray = logic.postbackData(senderID, 'Ask Timeslot', messageText);
+
+    for(var i = 0; i < dataArray.length; i++)
+      callSendAPI(dataArray[i]);
+
+    return;
   } else {
 
     sendTextMessage(senderID, "We will get in touch with you soon. Thank you.");

@@ -219,6 +219,51 @@ module.exports.postbackData = function(recipientId, postback) {
     }
   };
 
+  /**************            **************/
+  var bookingTime = {
+    recipient: {
+      id: recipientId
+    },
+    message: {
+      text: "Great. Please pick your preferred timeslot.",
+      quick_replies: [
+        {
+          "content_type":"text",
+          "title":"11:30 - 12:30",
+          "payload":"Timeslot"
+        },
+        {
+          "content_type":"text",
+          "title":"14:00 - 15:00",
+          "payload":"Timeslot"
+        },
+        {
+          "content_type":"text",
+          "title":"15:00 - 16:00",
+          "payload":"Timeslot"
+        },
+        {
+          "content_type":"text",
+          "title":"19:00 - 20:00",
+          "payload":"Timeslot"
+        }
+      ]
+    }
+  };
+  
+  /**************            **************/
+  var number = Math.floor((Math.random() * 10000) + 1);
+
+  var bookingFinish = {
+    recipient: {
+      id: recipientId
+    },
+    message: {
+      text: "Your booking is comfirmed. Confirmation number is " + number + ". We look forward to seeing you soon. Thank you!",
+      metadata: "DEVELOPER_DEFINED_METADATA"
+    }
+  };
+
 
   switch(postback) {
     case 'Get Started':
@@ -275,6 +320,14 @@ module.exports.postbackData = function(recipientId, postback) {
     case "Festival Walk Store":
       dataArray.push(dateAsk);
 
+      break;
+
+    case 'Ask Timeslot':
+      dataArray.push(bookingTime);
+      break;
+
+    case 'Timeslot':
+      dataArray.push(bookingFinish);
       break;
 
     default:
