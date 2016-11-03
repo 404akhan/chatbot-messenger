@@ -50,7 +50,7 @@ module.exports.postbackData = function(recipientId, postback) {
         type: "template",
         payload: {
           template_type: "generic",
-          elements: [beautyService, beautyService, beautyService]
+          elements: [beautyService]
         }
       }
     }
@@ -67,7 +67,7 @@ module.exports.postbackData = function(recipientId, postback) {
         {
           "content_type":"text",
           "title":"Makeup Service",
-          "payload":"Beauty Service Book Makeup Service"
+          "payload":"Makeup Service Book Makeup Service"
         },
         {
           "content_type":"text",
@@ -250,7 +250,7 @@ module.exports.postbackData = function(recipientId, postback) {
       ]
     }
   };
-  
+
   /**************            **************/
   var number = Math.floor((Math.random() * 10000) + 1);
 
@@ -282,15 +282,15 @@ module.exports.postbackData = function(recipientId, postback) {
 
       break;
 
-    case 'Beauty Service Book Makeup Class':
-      dataArray = fBeautyServiceBookGen('Makeup Class');
-
-      break;
-
-    case 'Beauty Service Book Facial Service':
-      dataArray = fBeautyServiceBookGen('Facial Service');
-
-      break;
+    // case 'Beauty Service Book Makeup Class':
+    //   dataArray = fBeautyServiceBookGen('Makeup Class');
+    //
+    //   break;
+    //
+    // case 'Beauty Service Book Facial Service':
+    //   dataArray = fBeautyServiceBookGen('Facial Service');
+    //
+    //   break;
 
     case "Makeup Class Details":
       dataArray.push(detailsMakeupClass);
