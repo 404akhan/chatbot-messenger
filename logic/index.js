@@ -170,24 +170,52 @@ module.exports.postbackData = function(recipientId, postback) {
       id: recipientId
     },
     message: {
-      text: "We offer Makeup and Facial Service. What do you want to book?",
+      text: "Sure. Which locations would you perfer?",
       quick_replies: [
         {
           "content_type":"text",
-          "title":"Makeup Service",
-          "payload":"Beauty Service Book Makeup Service"
+          "title":"Hong Kong",
+          "payload":"Hong Kong"
         },
         {
           "content_type":"text",
-          "title":"Makeup Class",
-          "payload":"Beauty Service Book Makeup Class"
+          "title":"Kowloon",
+          "payload":"Kowloon"
         },
         {
           "content_type":"text",
-          "title":"Facial Service",
-          "payload":"Beauty Service Book Facial Service"
+          "title":"New Territories",
+          "payload":"New Territories"
         }
       ]
+    }
+  };
+
+  /**************            **************/
+  var bookStore = {
+    recipient: {
+      id: recipientId
+    },
+    message: {
+      text: "Sure. Which locations would you perfer?",
+      quick_replies: [
+        {
+          "content_type":"text",
+          "title":"Festival Walk Store",
+          "payload":"Festival Walk Store"
+        }
+      ]
+    }
+  };
+
+  /**************            **************/
+  var detailsMakeupClass = {
+    recipient: {
+      id: recipientId
+    },
+    message: {
+      text: "What date would you prefer? Please type in dd-mm-yyyy format.",
+      metadata: "DEVELOPER_DEFINED_METADATA"
     }
   };
 
@@ -225,6 +253,26 @@ module.exports.postbackData = function(recipientId, postback) {
       break;
 
     case "Makeup Class Book":
+      dataArray.push(bookLocations);
+
+      break;
+
+    case "Hong Kong":
+      dataArray.push(bookStore);
+
+      break;
+
+    case "Kowloon":
+      dataArray.push(bookStore);
+
+      break;
+
+    case "New Territories":
+      dataArray.push(bookStore);
+
+      break;
+
+    case "Festival Walk Store":
       dataArray.push(bookLocations);
 
       break;
