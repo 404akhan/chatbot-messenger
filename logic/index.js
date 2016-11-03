@@ -41,7 +41,29 @@ module.exports.postbackData = function(recipientId, postback) {
     }],
   };
 
-  var getStartedTemplate = {
+  var beautyTips = {
+    title: "Beauty Tips",
+    buttons: [{
+      type: "postback",
+      title: "Details",
+      payload: "Beauty Tips Details",
+    }, {
+      type: "postback",
+      title: "Subscribe",
+      payload: "Beauty Tips Subscribe",
+    }],
+  };
+
+  var customerService = {
+    title: "Customer Service",
+    buttons: [{
+      type: "postback",
+      title: "Talk to us",
+      payload: "Customer Service Talk to us",
+    }],
+  };
+
+  var startBeautyService = {
     recipient: {
       id: recipientId
     },
@@ -51,6 +73,51 @@ module.exports.postbackData = function(recipientId, postback) {
         payload: {
           template_type: "generic",
           elements: [beautyService]
+        }
+      }
+    }
+  };
+
+  var startBeautyTips = {
+    recipient: {
+      id: recipientId
+    },
+    message: {
+      attachment: {
+        type: "template",
+        payload: {
+          template_type: "generic",
+          elements: [beautyTips]
+        }
+      }
+    }
+  };
+
+  var startCustomerService = {
+    recipient: {
+      id: recipientId
+    },
+    message: {
+      attachment: {
+        type: "template",
+        payload: {
+          template_type: "generic",
+          elements: [customerService]
+        }
+      }
+    }
+  };
+
+  var getStartedTemplate = {
+    recipient: {
+      id: recipientId
+    },
+    message: {
+      attachment: {
+        type: "template",
+        payload: {
+          template_type: "generic",
+          elements: [beautyService, beautyTips, customerService]
         }
       }
     }
@@ -269,6 +336,21 @@ module.exports.postbackData = function(recipientId, postback) {
     case 'Get Started':
       dataArray.push(getStartedMessage);
       dataArray.push(getStartedTemplate);
+
+      break;
+
+    case 'Beauty Service':
+      dataArray.push(startBeautyService);
+
+      break;
+
+    case 'Beauty Tips':
+      dataArray.push(startBeautyTips);
+
+      break;
+
+    case 'Customer Service':
+      dataArray.push(startCustomerService);
 
       break;
 
